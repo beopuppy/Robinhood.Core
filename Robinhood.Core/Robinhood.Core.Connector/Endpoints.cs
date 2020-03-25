@@ -4,10 +4,14 @@ using System.Text;
 
 namespace Robinhood.Core.Connector
 {
-    public class Endpoints
+    public class Endpoints : IEndpoints
     {
-        private string api_url = "https://api.robinhood.com";
-        
+        private readonly string api_url = "https://api.robinhood.com";
+
+        public Endpoints()
+        {
+        }
+
         /// <summary>
         /// Gets the Login endpoint
         /// </summary>
@@ -16,7 +20,7 @@ namespace Robinhood.Core.Connector
         {
             return $"{api_url}/oauth/token/"; 
         }
-
+        
         /// <summary>
         /// Gets the Logout endpoint
         /// </summary>
